@@ -10,7 +10,19 @@ import (
 const notImplement = "| Not Implement Yet |"
 
 func GetRoot(c *gin.Context) {
-	c.String(http.StatusOK, "jwt service started")
+	//c.String(http.StatusOK, "jwt service started")
+	html := `<html>
+				<head>
+				</head>
+				<body>
+					<h1>
+					Test 1
+					</h1>
+				</body>
+			</html>`
+
+	c.Data(200, "text/html; charset=utf-8", []byte(html))
+
 }
 
 func ProductList(c *gin.Context) {
