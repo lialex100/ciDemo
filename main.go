@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"jwtService/handler"
+	"github.com/lialex100/ciDemo/handler"
 )
 
 func main() {

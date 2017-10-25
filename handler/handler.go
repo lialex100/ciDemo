@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"jwtService/helper"
+	"github.com/lialex100/ciDemo/helper"
 	"log"
 	"net/http"
 )
@@ -19,4 +19,8 @@ func ProductList(c *gin.Context) {
 		"ApplePie",
 		"BananaPie",
 	}})
+}
+
+func HeartbeatHandler(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"status": "ok"})
 }
