@@ -4,4 +4,6 @@ go:
   - 1.8
   - master
 
+script: go build
+
 after_script: go test ./... -v -cover
