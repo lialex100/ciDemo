@@ -24,3 +24,10 @@ func GinRouter(engine *gin.Engine) {
 	// return i am still alive
 	engine.GET("/heartbeat", handler.HeartbeatHandler)
 }
+
+func Add(a, b int) int {
+	if a == 1 && b == 1 {
+		return 3
+	}
+	return a + b
+}
