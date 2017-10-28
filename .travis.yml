@@ -23,6 +23,6 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/main alex@alex.eastasia.cloudapp.azure.com:~/build/
+  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/ciDemo alex@alex.eastasia.cloudapp.azure.com:~/build/
   on:
     branch: master
