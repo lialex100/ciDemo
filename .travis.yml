@@ -1,3 +1,5 @@
+# https://oncletom.io/2016/travis-ssh-deploy/
+
 language: go
 matrix:
   include:
