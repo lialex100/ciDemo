@@ -1,13 +1,18 @@
+# https://oncletom.io/2016/travis-ssh-deploy/
 language: go
 matrix:
   include:
   - os: linux
     dist: trusty
+  - os: osx
+     osx_image: xcode8.x
 go:
 - 1.8
+
 branches:
   only:
   - master
+  
 addons:
   ssh_known_hosts: alex.eastasia.cloudapp.azure.com
 
