@@ -17,7 +17,13 @@ func TestAddFail(t *testing.T) {
 	assert.NotEqual(t, 2, Add(1, 1))
 }
 
-func TestProductList(t *testing.T) {
+func Benchmark_Add(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Add(1, 1)
+	}
+}
+
+func Test_ProductList(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/productList", nil)
 	response := httptest.NewRecorder()
 
