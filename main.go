@@ -11,18 +11,25 @@ func main() {
 }
 
 func StartGin() {
-	g := gin.Default()
-	g.Static("/static", "public")
-	GinRouter(g)
+	g := SetupGin()
 	g.Run(":8080")
+
 }
 
-func GinRouter(engine *gin.Engine) {
+func SetupGin() *gin.Engine {
+	g := gin.Default()
+	g = GinRouter(g)
+	return g
+}
 
+func GinRouter(engine *gin.Engine) *gin.Engine {
+	engine.Static("/static", "public")
 	engine.GET("/", handler.GetRoot)
 	engine.GET("/productList", handler.ProductList)
+
 	// return i am still alive
 	engine.GET("/heartbeat", handler.HeartbeatHandler)
+	return engine
 }
 
 func Add(a, b int) int {
