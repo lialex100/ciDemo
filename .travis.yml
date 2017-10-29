@@ -5,7 +5,7 @@ matrix:
   - os: linux
     dist: trusty
   - os: osx
-     osx_image: xcode8.x
+     osx_image: xcode9
 go:
 - 1.8
 
