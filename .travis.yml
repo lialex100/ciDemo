@@ -3,9 +3,8 @@ language: go
 matrix:
   include:
   - os: linux
-    dist: trusty
   - os: osx
-     osx_image: xcode9
+  
 go:
 - 1.8
 
