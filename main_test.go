@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 	//	"io/ioutil"
 	"net/http"
@@ -20,12 +21,14 @@ func TestProductList(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/productList", nil)
 	response := httptest.NewRecorder()
 
-	engine := SetupGin()
-	engine.ServeHTTP(response, request)
+	//	same
+	//	engine := SetupGin()
+	//	engine.ServeHTTP(response, request)
+	SetupGin().ServeHTTP(response, request)
 
 	p := response.Body.String()
-
-	t.Log(p)
-
+	//t.Log(spew.Sdump(p))
 	assert.Equal(t, 200, response.Code, "OK response is expected")
+	assert.JSONEq(t, `{"products":["ApplePie", "BananaPie"]}`, p)
+
 }
