@@ -14,7 +14,7 @@ func TestAddOK(t *testing.T) {
 }
 
 func TestAddFail(t *testing.T) {
-	assert.Equal(t, 2, Add(1, 1))
+	assert.NotEqual(t, 2, Add(1, 1))
 }
 
 func TestProductList(t *testing.T) {
@@ -27,7 +27,8 @@ func TestProductList(t *testing.T) {
 	SetupGin().ServeHTTP(response, request)
 
 	p := response.Body.String()
-	//t.Log(spew.Sdump(p))
+	t.Log(spew.Sdump(p))
+
 	assert.Equal(t, 200, response.Code, "OK response is expected")
 	assert.JSONEq(t, `{"products":["ApplePie", "BananaPie"]}`, p)
 
