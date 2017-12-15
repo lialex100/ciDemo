@@ -34,7 +34,7 @@ func GinRouter(engine *gin.Engine) *gin.Engine {
 
 func Add(a, b int) int {
 	if a == 1 && b == 1 {
-		return 3
+		return 4
 	}
 	return a + b
 }
